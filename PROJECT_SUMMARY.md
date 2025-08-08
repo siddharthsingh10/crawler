@@ -23,7 +23,7 @@ Built a scalable web crawler that extracts metadata from URLs and classifies con
 
 ### **Working Demo**
 - **Endpoint**: `https://cay2tad7yd.execute-api.us-east-1.amazonaws.com/prod/crawl`
-- **API Key**: `J4vdpYFhaP5pI3wUtV62H4aP1JUsdqGt8OYbs6uW`
+- **API Key**: `[API_KEY_HERE]`
 - **Response Time**: 2-5 seconds per request
 - **Success Rate**: >95% for accessible URLs
 

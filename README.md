@@ -8,11 +8,11 @@ A web crawler that extracts metadata from URLs and classifies content into relev
 
 **API Endpoint**: `https://cay2tad7yd.execute-api.us-east-1.amazonaws.com/prod/crawl`
 
-**API Key**: `J4vdpYFhaP5pI3wUtV62H4aP1JUsdqGt8OYbs6uW`
+**API Key**: `[API_KEY_HERE]`
 
 **Example Request**:
 ```bash
-curl "https://cay2tad7yd.execute-api.us-east-1.amazonaws.com/prod/crawl?url=https://example.com&api_key=J4vdpYFhaP5pI3wUtV62H4aP1JUsdqGt8OYbs6uW"
+curl "https://cay2tad7yd.execute-api.us-east-1.amazonaws.com/prod/crawl?url=https://example.com&api_key=[API_KEY_HERE]"
 ```
 
 **Example Response**:
