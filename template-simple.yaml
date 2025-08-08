@@ -1,0 +1,83 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: BrightEdge Crawler - Simple Lambda + API Gateway
+
+Globals:
+  Function:
+    Runtime: python3.9
+    Timeout: 30
+    MemorySize: 256
+    Tracing: Disabled
+    Environment:
+      Variables:
+        CRAWLER_TIMEOUT: 30
+        CRAWLER_MAX_RETRIES: 3
+        CRAWLER_DELAY: 1.0
+        CORS_ALLOW_ORIGIN: "*"
+        API_KEY: J4vdpYFhaP5pI3wUtV62H4aP1JUsdqGt8OYbs6uW
+
+Resources:
+  CrawlerFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: lambda_handler_simple.handler
+      CodeUri: .
+      Description: Extracts metadata from a provided URL
+      Policies:
+        - AWSLambdaBasicExecutionRole
+      Events:
+        ApiCrawl:
+          Type: Api
+          Properties:
+            Path: /crawl
+            Method: get
+            RestApiId: !Ref PublicApi
+
+  PublicApi:
+    Type: AWS::Serverless::Api
+    Properties:
+      StageName: prod
+      TracingEnabled: false
+      MethodSettings:
+        - ResourcePath: "/*"
+          HttpMethod: "*"
+          ThrottlingBurstLimit: 5
+          ThrottlingRateLimit: 2
+      EndpointConfiguration: REGIONAL
+
+  ApiKey:
+    Type: AWS::ApiGateway::ApiKey
+    Properties:
+      Name: brightedge-crawler-api-key
+      Description: API key for BrightEdge crawler
+      Enabled: true
+
+  UsagePlan:
+    Type: AWS::ApiGateway::UsagePlan
+    Properties:
+      UsagePlanName: brightedge-crawler-usage-plan
+      Description: Usage plan for BrightEdge crawler
+      ApiStages:
+        - ApiId: !Ref PublicApi
+          Stage: prod
+      Throttle:
+        RateLimit: 10
+        BurstLimit: 20
+      Quota:
+        Limit: 1000
+        Period: DAY
+
+  UsagePlanKey:
+    Type: AWS::ApiGateway::UsagePlanKey
+    Properties:
+      KeyId: !Ref ApiKey
+      KeyType: API_KEY
+      UsagePlanId: !Ref UsagePlan
+
+Outputs:
+  ApiUrl:
+    Description: API endpoint URL
+    Value: !Sub "https://${PublicApi}.execute-api.${AWS::Region}.amazonaws.com/prod/crawl"
+  ApiKeyId:
+    Description: API Key ID
+    Value: !Ref ApiKey
