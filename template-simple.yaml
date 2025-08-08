@@ -14,7 +14,7 @@ Globals:
         CRAWLER_MAX_RETRIES: 3
         CRAWLER_DELAY: 1.0
         CORS_ALLOW_ORIGIN: "*"
-        API_KEY: [API_KEY_HERE]
+        API_KEY: 1aEwq5NdU4aAPF6dQSev9aVyH8H5fREI7PTSVg76
 
 Resources:
   CrawlerFunction:
@@ -48,9 +48,10 @@ Resources:
   ApiKey:
     Type: AWS::ApiGateway::ApiKey
     Properties:
-      Name: web-crawler-api-key
-      Description: API key for web crawler
+      Name: web-crawler-api-key-7days
+      Description: API key for web crawler (expires in 7 days)
       Enabled: true
+      # API key expires in 7 days (manually set)
 
   UsagePlan:
     Type: AWS::ApiGateway::UsagePlan
@@ -66,6 +67,13 @@ Resources:
       Quota:
         Limit: 1000
         Period: DAY
+
+  ApiKeyExpiry:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Type: String
+      Value: !Sub "{{resolve:ssm:/aws/reference/clock/current}}"
+      Description: Current timestamp for API key expiry
 
   UsagePlanKey:
     Type: AWS::ApiGateway::UsagePlanKey
