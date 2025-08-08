@@ -1,4 +1,4 @@
-# BrightEdge Web Crawler
+# Web Crawler Assignment
 
 A web crawler that extracts metadata from URLs and classifies content into relevant topics. Deployed as a public API endpoint.
 
@@ -30,10 +30,10 @@ curl "https://cay2tad7yd.execute-api.us-east-1.amazonaws.com/prod/crawl?url=http
 ## 📋 What It Does
 
 ### Core Features
-- **Extracts metadata**: title, description, body content from any URL
-- **Classifies content**: identifies topics (e-commerce, news, blog, technology, general)
-- **Handles errors**: retry logic and graceful error handling
-- **Respects websites**: rate limiting and polite crawling
+- Extracts metadata: title, description, body content from any URL
+- Classifies content: identifies topics (e-commerce, news, blog, technology, general)
+- Handles errors: retry logic and graceful error handling
+- Respects websites: rate limiting and polite crawling
 
 ### Tested URLs
 - ✅ Amazon product page
@@ -41,9 +41,9 @@ curl "https://cay2tad7yd.execute-api.us-east-1.amazonaws.com/prod/crawl?url=http
 - ✅ REI blog post
 - ✅ General websites
 
-## 🏗️ Architecture
+## 🏗️ Implementation
 
-### Current Implementation
+### Current Setup
 - **Language**: Python 3.9
 - **Deployment**: AWS Lambda + API Gateway
 - **Dependencies**: Built-in Python libraries only
@@ -114,15 +114,4 @@ sam deploy --stack-name brightedge-crawler --template-file template-simple.yaml 
 ### ✅ Part 2: Design Documentation
 - [x] Design for billions of URLs
 - [x] Optimize for cost, reliability, performance
-- [x] Propose next steps and implementation roadmap
-
-## 🚀 Ready for Production
-
-The solution demonstrates solid engineering principles:
-- **Working Demo**: Actually deployed and tested
-- **Scalable Design**: Architecture for billions of URLs
-- **Cost Conscious**: Optimized for efficiency
-- **Maintainable**: Simple, readable code
-- **Secure**: API key authentication and rate limiting
-
-**Status**: Complete and ready for submission ✅ 
+- [x] Propose next steps and implementation roadmap 
