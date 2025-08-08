@@ -63,8 +63,9 @@ curl "https://cay2tad7yd.execute-api.us-east-1.amazonaws.com/prod/crawl?url=http
 - `test_crawler.py` - Testing script
 
 ### Documentation
-- `SYSTEM_DESIGN.md` - System design for scale
-- `PROJECT_SUMMARY.md` - Project overview
+- `PART2_SYSTEM_DESIGN.md` - System design for scale
+- `PART3_IMPLEMENTATION_PLAN.md` - Implementation plan and blockers
+- `PROJECT_OVERVIEW.md` - Project overview
 
 ## 🧪 Local Testing
 
@@ -114,4 +115,10 @@ sam deploy --stack-name web-crawler --template-file template-simple.yaml --resol
 ### ✅ Part 2: Design Documentation
 - [x] Design for billions of URLs
 - [x] Optimize for cost, reliability, performance
-- [x] Propose next steps and implementation roadmap 
+- [x] Propose next steps and implementation roadmap
+
+### ✅ Part 3: Implementation Plan
+- [x] Break down engineering approach to Proof of Concept
+- [x] Identify potential blockers and risks
+- [x] Define team structure and release strategy
+- [x] Provide resource estimation and timeline 
