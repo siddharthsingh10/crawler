@@ -1,8 +1,8 @@
-# BrightEdge Web Crawler - Project Summary
+# Web Crawler Assignment - Project Summary
 
 ## 🎯 **Project Overview**
 
-Built a scalable web crawler that extracts metadata from URLs and classifies content into relevant topics. The solution includes both a working demo and comprehensive system design for scaling to billions of URLs.
+Built a web crawler that extracts metadata from URLs and classifies content into relevant topics. The solution includes both a working demo and system design for scaling to billions of URLs.
 
 ## 🚀 **What Was Built**
 
@@ -47,13 +47,12 @@ Built a scalable web crawler that extracts metadata from URLs and classifies con
 ## 📁 **Project Structure**
 
 ```
-brightedge/
+crawler/
 ├── lambda_handler_simple.py    # Core crawler implementation
 ├── template-simple.yaml        # AWS deployment configuration
 ├── test_crawler.py            # Testing script
 ├── SYSTEM_DESIGN.md           # System design for scale
-├── README.md                  # Setup and usage instructions
-└── ASSIGNMENT_COMPLIANCE.md   # Requirements verification
+└── README.md                  # Setup and usage instructions
 ```
 
 ## 🎯 **Assignment Requirements Met**
@@ -77,14 +76,3 @@ brightedge/
 3. **Built-in Libraries**: Avoided external dependencies for reliability
 4. **Rule-based Classification**: Simple but effective topic detection
 5. **One-pager Design**: Concise system design document
-
-## 🚀 **Ready for Production**
-
-The solution demonstrates solid engineering principles:
-- **Working Demo**: Actually deployed and tested
-- **Scalable Design**: Architecture for billions of URLs
-- **Cost Conscious**: Optimized for efficiency
-- **Maintainable**: Simple, readable code
-- **Secure**: API key authentication and rate limiting
-
-**Status**: Complete and ready for submission ✅

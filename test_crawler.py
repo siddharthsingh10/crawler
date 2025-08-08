@@ -1,6 +1,6 @@
 """
 Test script for the web crawler functionality.
-Tests the crawler with the provided BrightEdge assignment URLs and working demo URLs.
+Tests the crawler with the provided assignment URLs and working demo URLs.
 """
 
 import json
@@ -9,7 +9,7 @@ from crawler.core import WebCrawler
 
 def test_crawler():
     """
-    Test the crawler with the provided BrightEdge assignment URLs and working demo URLs.
+    Test the crawler with the provided assignment URLs and working demo URLs.
     """
     # Test URLs from the assignment (may be blocked)
     assignment_urls = [
@@ -28,7 +28,7 @@ def test_crawler():
     # Initialize crawler
     crawler = WebCrawler(timeout=30, max_retries=3, delay=1.0)
     
-    print("🚀 Starting BrightEdge Web Crawler Test")
+    print("🚀 Starting Web Crawler Test")
     print("=" * 50)
     
     # Test assignment URLs first

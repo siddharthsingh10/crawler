@@ -92,7 +92,7 @@ print(json.dumps(result, indent=2))
 ### Deploy
 ```bash
 sam build
-sam deploy --stack-name brightedge-crawler --template-file template-simple.yaml --resolve-s3 --no-confirm-changeset --capabilities CAPABILITY_IAM
+sam deploy --stack-name web-crawler --template-file template-simple.yaml --resolve-s3 --no-confirm-changeset --capabilities CAPABILITY_IAM
 ```
 
 ## 📊 Performance

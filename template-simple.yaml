@@ -1,6 +1,6 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Transform: AWS::Serverless-2016-10-31
-Description: BrightEdge Crawler - Simple Lambda + API Gateway
+Description: Web Crawler - Simple Lambda + API Gateway
 
 Globals:
   Function:
@@ -48,15 +48,15 @@ Resources:
   ApiKey:
     Type: AWS::ApiGateway::ApiKey
     Properties:
-      Name: brightedge-crawler-api-key
-      Description: API key for BrightEdge crawler
+      Name: web-crawler-api-key
+      Description: API key for web crawler
       Enabled: true
 
   UsagePlan:
     Type: AWS::ApiGateway::UsagePlan
     Properties:
-      UsagePlanName: brightedge-crawler-usage-plan
-      Description: Usage plan for BrightEdge crawler
+      UsagePlanName: web-crawler-usage-plan
+      Description: Usage plan for web crawler
       ApiStages:
         - ApiId: !Ref PublicApi
           Stage: prod

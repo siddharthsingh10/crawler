@@ -1,4 +1,4 @@
-# BrightEdge Web Crawler - System Design for Scale
+# Web Crawler - System Design for Scale
 
 ## 🎯 **Target Scale: 1 Billion URLs/day**
 
