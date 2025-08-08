@@ -14,7 +14,7 @@ Globals:
         CRAWLER_MAX_RETRIES: 3
         CRAWLER_DELAY: 1.0
         CORS_ALLOW_ORIGIN: "*"
-        API_KEY: 1aEwq5NdU4aAPF6dQSev9aVyH8H5fREI7PTSVg76
+        API_KEY: [API_KEY_HERE]
 
 Resources:
   CrawlerFunction:
